@@ -6,21 +6,29 @@ permalink: /
 
 ## Performance
 
-<div id="crypto_fund_plot" class="graph" style="width: 885; height: 400;"></div>
+<div id="crypto_fund_plot" class="graph"></div>
 <script>
 
-    var data = [
-    {
-    x: ['2013-10-04 22:23:00', '2013-11-04 22:23:00', '2013-12-04 22:23:00'],
-    y: [1, 3, 6],
-    type: 'scatter'
-   }
-    ];
+    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_bitcoin.csv', function(err, rows){
+        var date = Array(rows.length)
+        var perf = Array(rows.length)
 
-   Plotly.newPlot('crypto_fund_plot', data, {
-    paper_bgcolor: 'rgba(0,0,0,0)',
-    plot_bgcolor: 'rgba(0,0,0,0)'
-   });
+        rows.map(function(row, i) {
+            date[i] = row[''];
+            perf[i] = row['perf'];
+        });
+
+        var data = [{
+            x: date,
+            y: perf,
+            type: 'scatter'
+        }];
+
+        Plotly.newPlot('crypto_fund_plot', data, {
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            plot_bgcolor: 'rgba(0,0,0,0)'
+        });
+    })
 
 </script>
 
