@@ -1,0 +1,15 @@
+{% assign add_resource = false %}
+{% if paginator.posts %}
+  {% for post in paginator.posts %}
+    {% if post.resources contains resource %}
+      {% assign add_resource = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if page.resources contains resource %}
+  {% assign add_resource = true %}
+{% endif %}
+{% if add_resource %}
+  {% include {{ resource | append:'.html' }} %}
+{% endif %}
