@@ -26,8 +26,14 @@ permalink: /
 
         Plotly.newPlot('crypto_fund_plot', data, {
             paper_bgcolor: 'rgba(0,0,0,0)',
-            plot_bgcolor: 'rgba(0,0,0,0)'
-        });
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            xaxis: {
+				autorange: true,
+				//range: ["2015-02-17", "2017-02-16"],
+				rangeslider: { autorange: true },
+				type: "date"
+			}
+        }, {displayModeBar: false});
     })
 
 </script>
