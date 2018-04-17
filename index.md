@@ -32,6 +32,10 @@ permalink: /
 				//range: ["2015-02-17", "2017-02-16"],
 				rangeslider: { autorange: true },
 				type: "date"
+			},
+			yaxis: {
+			    autorange: true,
+			    type: 'log'
 			}
         }, {displayModeBar: false});
     })
