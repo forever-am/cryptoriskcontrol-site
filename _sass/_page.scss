@@ -57,3 +57,14 @@
 .graph {
     background-color: $background;
 }
+
+.alloc-container {
+    display: flex;
+}
+
+.alloc-pie {
+    width: 400px;
+}
+.alloc-table {
+    flex-grow: 1;
+}

@@ -10,10 +10,10 @@ permalink: /
 
 ## Allocation
 
-<div id="alloc_folio_btc" class="graph"></div>
-<div id="alloc_folio_eth" class="graph"></div>
-<div id="alloc_folio_xrp" class="graph"></div>
-<div id="alloc_folio_multi" class="graph"></div>
+<div class="alloc-container">
+    <div id="alloc_folio_multi" class="alloc-pie graph"></div>
+    <div class="alloc-table">Alloc table</div>
+</div>
 
 <script>
 
@@ -55,14 +55,8 @@ permalink: /
         };
     }
 
-    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_bitcoin.csv', function(err, btc_raw) {
-    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_ethereum.csv', function(err, eth_raw) {
-    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_ripple.csv', function(err, xrp_raw) {
     Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv', function(err, multi_raw) {
         var plot_data = [
-            build_plot_data(btc_raw, 'BTC fund'),
-            build_plot_data(eth_raw, 'ETH fund'),
-            build_plot_data(xrp_raw, 'XRP fund'),
             build_plot_data(multi_raw, 'BTC-ETH-XRP fund')
         ];
 
@@ -88,16 +82,9 @@ permalink: /
             width: 400
         };
 
-        Plotly.newPlot('alloc_folio_btc', [build_alloc_data(btc_raw)],
-                       pie_layout, {displayModeBar: false});
-        Plotly.newPlot('alloc_folio_eth', [build_alloc_data(eth_raw)],
-                       pie_layout, {displayModeBar: false});
-        Plotly.newPlot('alloc_folio_xrp', [build_alloc_data(xrp_raw)],
-                       pie_layout, {displayModeBar: false});
         Plotly.newPlot('alloc_folio_multi', [build_alloc_data(multi_raw)],
                        pie_layout, {displayModeBar: false});
-        
-    })})})})
+    })
 
 </script>
 
