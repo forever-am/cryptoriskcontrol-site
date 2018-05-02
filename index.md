@@ -9,22 +9,35 @@ permalink: /
 <div id="crypto_fund_plot" class="graph"></div>
 <script>
 
-    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_bitcoin.csv', function(err, rows){
-        var date = Array(rows.length)
-        var perf = Array(rows.length)
+    function build_plot_data(csv_raw) {
+        var date = Array(csv_raw.length)
+        var value = Array(csv_raw.length)
 
-        rows.map(function(row, i) {
+        csv_raw.map(function(row, i) {
             date[i] = row[''];
-            perf[i] = row['perf'];
+            value[i] = row['value'];
         });
 
-        var data = [{
+        return {
             x: date,
-            y: perf,
+            y: value,
             type: 'scatter'
-        }];
+        };
+    }
 
-        Plotly.newPlot('crypto_fund_plot', data, {
+
+    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_bitcoin.csv', function(err, btc_raw) {
+    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_ethereum.csv', function(err, eth_raw) {
+    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_ripple.csv', function(err, xrp_raw) {
+    Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv', function(err, multi_raw) {
+        var plot_data = [
+            build_plot_data(btc_raw),
+            build_plot_data(eth_raw),
+            build_plot_data(xrp_raw),
+            build_plot_data(multi_raw)
+        ];
+
+        Plotly.newPlot('crypto_fund_plot', plot_data, {
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)',
             xaxis: {
@@ -38,7 +51,7 @@ permalink: /
 			    type: 'log'
 			}
         }, {displayModeBar: false});
-    })
+    })})})})
 
 </script>
 
