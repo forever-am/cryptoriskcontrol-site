@@ -78,12 +78,30 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
         width: 400
     };
 
-    alloc_data = build_alloc_data(portfolio_raw);
+    var alloc_data = build_alloc_data(portfolio_raw);
     Plotly.newPlot('alloc_folio_multi', [{
                    values: alloc_data.alloc,
                    labels: alloc_data.labels,
                    type: 'pie'
                   }], pie_layout, {displayModeBar: false});
+
+
+    var alloc_table = [
+        [format_percent(alloc_data.labels[0]),
+         format_percent(alloc_data.alloc[0]), "", ""],
+        [format_percent(alloc_data.labels[1]),
+         format_percent(alloc_data.alloc[1]), "", ""],
+        [format_percent(alloc_data.labels[2]),
+         format_percent(alloc_data.alloc[2]), "", ""],
+        [format_percent(alloc_data.labels[3]),
+         format_percent(alloc_data.alloc[3]), "", ""]
+    ];
+
+    var allocation_body = document.getElementById("allocation-table");
+    for (var i = 0; i < alloc_table.length; ++i) {
+        tr = create_row(alloc_table[i]);
+        allocation_body.appendChild(tr);
+    }
 });
 });
 
