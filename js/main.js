@@ -58,9 +58,12 @@ var format_float = function(x, decimals) {
 }
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
-              function(err, multi_raw) {
+              function(err, portfolio_raw) {
+Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv',
+              function(err, benchmark_raw) {
     var plot_data = [
-        build_plot_data(multi_raw, 'BTC-ETH-XRP fund')
+        build_plot_data(portfolio_raw, 'BTC-ETH-XRP fund'),
+        build_plot_data(benchmark_raw, 'Equal Weights Benchmark')
     ];
 
     Plotly.newPlot('crypto_fund_plot', plot_data, {
@@ -84,19 +87,19 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
         width: 400
     };
 
-    Plotly.newPlot('alloc_folio_multi', [build_alloc_data(multi_raw)],
+    Plotly.newPlot('alloc_folio_multi', [build_alloc_data(portfolio_raw)],
                    pie_layout, {displayModeBar: false});
 });
 
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
-              function(err, multi_raw) {
+              function(err, stats_raw) {
 
     var stats = [
-        ["Perf.", format_percent(multi_raw[0]["perf"]), format_percent(multi_raw[1]["perf"])],
-        ["Volatility", format_percent(multi_raw[0]["vol"]), format_percent(multi_raw[1]["vol"])],
-        ["Max Drawdown", format_percent(multi_raw[0]["dd"]), format_percent(multi_raw[1]["dd"])],
-        ["Sharpe", format_float(multi_raw[0]["Sharpe"], 2), format_float(multi_raw[1]["Sharpe"], 2)]
+        ["Perf.", format_percent(stats_raw[0]["perf"]), format_percent(stats_raw[1]["perf"])],
+        ["Volatility", format_percent(stats_raw[0]["vol"]), format_percent(stats_raw[1]["vol"])],
+        ["Max Drawdown", format_percent(stats_raw[0]["dd"]), format_percent(stats_raw[1]["dd"])],
+        ["Sharpe", format_float(stats_raw[0]["Sharpe"], 2), format_float(stats_raw[1]["Sharpe"], 2)]
     ];
 
     var metrics_body = document.getElementById("metrics-table");
