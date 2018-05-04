@@ -100,7 +100,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 
     index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["value"]);
     index_element = document.getElementById("crypto_index_value");
-    index_element.textContent = index_value.toFixed(0);
+    index_element.textContent = index_value.toLocaleString().split(".")[0];
 });
 });
 
