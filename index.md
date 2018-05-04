@@ -11,7 +11,6 @@ permalink: /
 ## Allocation
 
 <div class="alloc-container">
-    <div id="alloc_folio_multi" class="alloc-pie graph"></div>
     <div class="alloc-table">
     <table>
     <thead>
@@ -26,6 +25,7 @@ permalink: /
     </tbody>
     </table>
     </div>
+    <div id="alloc_folio_multi" class="alloc-pie graph"></div>
 </div>
 
 

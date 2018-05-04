@@ -28,7 +28,7 @@ var build_plot_data = function(csv_raw, name) {
     };
 };
 
-var build_alloc_data = function(csv_raw) {
+var build_alloc_pie_data = function(csv_raw) {
     var alloc = [];
     var labels = [];
     var last_row = csv_raw[csv_raw.length - 1];
@@ -47,6 +47,19 @@ var format_percent = function(x) {
 var format_float = function(x, decimals) {
     return  Number.parseFloat(x).toFixed(decimals);
 }
+
+var build_alloc_table_data = function(csv_raw) {
+    var last_row = csv_raw[csv_raw.length - 1];
+
+    return [
+        ["BTC", format_percent(last_row["BTC-USD"]), "", ""],
+        ["ETH", format_percent(last_row["ETH-USD+"]), "", ""],
+        ["XRP", format_percent(last_row["XRP-USD+"]), "", ""],
+        ["USD", format_percent(last_row["cash"]), "", ""]
+    ];
+};
+
+
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
               function(err, portfolio_raw) {
@@ -74,29 +87,19 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
         plot_bgcolor: 'rgba(0,0,0,0)',
-        height: 400,
+        height: 300,
         width: 400
     };
 
-    var alloc_data = build_alloc_data(portfolio_raw);
+    var alloc_pie_data = build_alloc_pie_data(portfolio_raw);
     Plotly.newPlot('alloc_folio_multi', [{
-                   values: alloc_data.alloc,
-                   labels: alloc_data.labels,
+                   values: alloc_pie_data.alloc,
+                   labels: alloc_pie_data.labels,
                    type: 'pie'
                   }], pie_layout, {displayModeBar: false});
 
 
-    var alloc_table = [
-        [format_percent(alloc_data.labels[0]),
-         format_percent(alloc_data.alloc[0]), "", ""],
-        [format_percent(alloc_data.labels[1]),
-         format_percent(alloc_data.alloc[1]), "", ""],
-        [format_percent(alloc_data.labels[2]),
-         format_percent(alloc_data.alloc[2]), "", ""],
-        [format_percent(alloc_data.labels[3]),
-         format_percent(alloc_data.alloc[3]), "", ""]
-    ];
-
+    var alloc_table = build_alloc_table_data(portfolio_raw);
     var allocation_body = document.getElementById("allocation-table");
     for (var i = 0; i < alloc_table.length; ++i) {
         tr = create_row(alloc_table[i]);
