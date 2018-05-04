@@ -44,6 +44,11 @@ var format_percent = function(x) {
     return  (Number.parseFloat(x)*100).toFixed(1) + "%";
 }
 
+var format_percent_with_plus = function(x) {
+    var x_ = Number.parseFloat(x)
+    return  ((x_ > 0) ? "+" : "") + (x_*100).toFixed(1) + "%";
+}
+
 var format_float = function(x, decimals) {
     return  Number.parseFloat(x).toFixed(decimals);
 }
@@ -56,16 +61,16 @@ var build_alloc_table_data = function(csv_raw) {
     return [
         ["BTC", format_percent(target_row["BTC-USD"]),
                 format_percent(current_row["BTC-USD"]),
-                format_percent(change_row["BTC-USD"])],
+                format_percent_with_plus(change_row["BTC-USD"])],
         ["ETH", format_percent(target_row["ETH-USD+"]),
                 format_percent(current_row["ETH-USD+"]),
-                format_percent(change_row["ETH-USD+"])],
+                format_percent_with_plus(change_row["ETH-USD+"])],
         ["XRP", format_percent(target_row["XRP-USD+"]),
                 format_percent(current_row["XRP-USD+"]),
-                format_percent(change_row["XRP-USD+"])],
+                format_percent_with_plus(change_row["XRP-USD+"])],
         ["USD", format_percent(target_row["cash"]),
                 format_percent(current_row["cash"]),
-                format_percent(change_row["cash"])]
+                format_percent_with_plus(change_row["cash"])]
     ];
 };
 
