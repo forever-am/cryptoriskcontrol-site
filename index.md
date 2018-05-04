@@ -4,6 +4,8 @@ title: Fund Index
 permalink: /
 ---
 
+<h1 id="crypto_index_value"></h1>
+
 ## Performance
 
 <div id="crypto_fund_plot" class="graph"></div>
@@ -15,7 +17,7 @@ permalink: /
     <table>
     <thead>
     <tr>
-      <th style="text-align: left"> </th>
+      <th style="text-align: left"></th>
       <th style="text-align: left">Target allocation</th>
       <th style="text-align: left">Previous allocation</th>
       <th style="text-align: left">Allocation change</th>

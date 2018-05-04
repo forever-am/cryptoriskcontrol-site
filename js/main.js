@@ -80,7 +80,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv',
               function(err, benchmark_raw) {
     var plot_data = [
-        build_plot_data(portfolio_raw, 'Crypto Risk Control Fund'),
+        build_plot_data(portfolio_raw, 'Crypto Risk Control Index'),
         build_plot_data(benchmark_raw, 'Equal Weights Benchmark')
     ];
 
@@ -97,6 +97,10 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 			type: 'log'
 		}
     }, {displayModeBar: false});
+
+    index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["value"]);
+    index_element = document.getElementById("crypto_index_value");
+    index_element.textContent = index_value.toFixed(0);
 });
 });
 
