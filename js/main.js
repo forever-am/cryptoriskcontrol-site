@@ -90,6 +90,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
     Plotly.newPlot('alloc_folio_multi', [build_alloc_data(portfolio_raw)],
                    pie_layout, {displayModeBar: false});
 });
+});
 
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
