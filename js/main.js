@@ -31,7 +31,7 @@ var build_plot_data = function(csv_raw, name) {
 var build_alloc_pie_data = function(csv_raw) {
     var alloc = [];
     var labels = [];
-    var last_row = csv_raw[csv_raw.length - 1];
+    var last_row = csv_raw[1];
 
     return {
         alloc: [last_row["BTC-USD"]*100, last_row["ETH-USD+"]*100,
@@ -58,11 +58,11 @@ var build_alloc_table_data = function(csv_raw) {
                 format_percent(current_row["BTC-USD"]),
                 format_percent(change_row["BTC-USD"])],
         ["ETH", format_percent(target_row["ETH-USD+"]),
-                format_percent(current_row["ETH-USD"]),
-                format_percent(change_row["ETH-USD"])],
+                format_percent(current_row["ETH-USD+"]),
+                format_percent(change_row["ETH-USD+"])],
         ["XRP", format_percent(target_row["XRP-USD+"]),
-                format_percent(current_row["XRP-USD"]),
-                format_percent(change_row["XRP-USD"])],
+                format_percent(current_row["XRP-USD+"]),
+                format_percent(change_row["XRP-USD+"])],
         ["USD", format_percent(target_row["cash"]),
                 format_percent(current_row["cash"]),
                 format_percent(change_row["cash"])]
