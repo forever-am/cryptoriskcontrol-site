@@ -62,7 +62,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv',
               function(err, benchmark_raw) {
     var plot_data = [
-        build_plot_data(portfolio_raw, 'BTC-ETH-XRP fund'),
+        build_plot_data(portfolio_raw, 'Crypto Risk Control Fund'),
         build_plot_data(benchmark_raw, 'Equal Weights Benchmark')
     ];
 
