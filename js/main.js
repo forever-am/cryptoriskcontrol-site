@@ -49,6 +49,14 @@ var build_alloc_data = function(csv_raw) {
     };
 };
 
+var format_percent = function(x) {
+    return  (Number.parseFloat(x)*100).toFixed(1) + "%";
+}
+
+var format_float = function(x, decimals) {
+    return  Number.parseFloat(x).toFixed(decimals);
+}
+
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
               function(err, multi_raw) {
     var plot_data = [
@@ -85,10 +93,10 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
               function(err, multi_raw) {
 
     var stats = [
-        ["Perf.", multi_raw[0]["perf"], multi_raw[1]["perf"]],
-        ["Volatility", multi_raw[0]["vol"], multi_raw[1]["vol"]],
-        ["Max Drawdown", multi_raw[0]["dd"], multi_raw[1]["dd"]],
-        ["Sharpe", multi_raw[0]["Sharpe"], multi_raw[1]["Sharpe"]]
+        ["Perf.", format_percent(multi_raw[0]["perf"]), format_percent(multi_raw[1]["perf"])],
+        ["Volatility", format_percent(multi_raw[0]["vol"]), format_percent(multi_raw[1]["vol"])],
+        ["Max Drawdown", format_percent(multi_raw[0]["dd"]), format_percent(multi_raw[1]["dd"])],
+        ["Sharpe", format_float(multi_raw[0]["Sharpe"], 2), format_float(multi_raw[1]["Sharpe"], 2)]
     ];
 
     var metrics_body = document.getElementById("metrics-table");
