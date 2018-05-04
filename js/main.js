@@ -87,8 +87,8 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
         plot_bgcolor: 'rgba(0,0,0,0)',
-        height: 300,
-        width: 400,
+        height: 200,
+        width: 300,
         margin: {
             l: 0,
             r: 0,
