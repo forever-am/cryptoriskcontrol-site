@@ -12,7 +12,7 @@ permalink: /
 
 <div class="alloc-container">
     <div id="alloc_folio_multi" class="alloc-pie graph"></div>
-    <div class="alloc-table">Alloc table
+    <div class="alloc-table">
     <table>
     <thead>
     <tr>
@@ -22,7 +22,7 @@ permalink: /
       <th style="text-align: left">Allocation change</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="allocation-table">
     </tbody>
     </table>
     </div>

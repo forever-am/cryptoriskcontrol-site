@@ -68,7 +68,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
         plot_bgcolor: 'rgba(0,0,0,0)',
         xaxis: {
 		    autorange: true,
-		    rangeslider: { autorange: true },
+		    //rangeslider: { autorange: true },
 		    type: "date"
 		},
 		yaxis: {
