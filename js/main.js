@@ -49,16 +49,25 @@ var format_float = function(x, decimals) {
 }
 
 var build_alloc_table_data = function(csv_raw) {
-    var last_row = csv_raw[csv_raw.length - 1];
+    var current_row = csv_raw[0];
+    var target_row = csv_raw[1];
+    var change_row = csv_raw[2];
 
     return [
-        ["BTC", format_percent(last_row["BTC-USD"]), "", ""],
-        ["ETH", format_percent(last_row["ETH-USD+"]), "", ""],
-        ["XRP", format_percent(last_row["XRP-USD+"]), "", ""],
-        ["USD", format_percent(last_row["cash"]), "", ""]
+        ["BTC", format_percent(target_row["BTC-USD"]),
+                format_percent(current_row["BTC-USD"]),
+                format_percent(change_row["BTC-USD"])],
+        ["ETH", format_percent(target_row["ETH-USD+"]),
+                format_percent(current_row["ETH-USD"]),
+                format_percent(change_row["ETH-USD"])],
+        ["XRP", format_percent(target_row["XRP-USD+"]),
+                format_percent(current_row["XRP-USD"]),
+                format_percent(change_row["XRP-USD"])],
+        ["USD", format_percent(target_row["cash"]),
+                format_percent(current_row["cash"]),
+                format_percent(change_row["cash"])]
     ];
 };
-
 
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
@@ -83,7 +92,12 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 			type: 'log'
 		}
     }, {displayModeBar: false});
+});
+});
 
+
+Plotly.d3.csv('/cryptoriskcontrol-site/series/current_alloc_btc_eth_xrp.csv',
+    function(err, alloc_raw) {
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
         plot_bgcolor: 'rgba(0,0,0,0)',
@@ -98,23 +112,21 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
         }
     };
 
-    var alloc_pie_data = build_alloc_pie_data(portfolio_raw);
+    var alloc_pie_data = build_alloc_pie_data(alloc_raw);
     Plotly.newPlot('alloc_folio_multi', [{
-                   values: alloc_pie_data.alloc,
-                   labels: alloc_pie_data.labels,
-                   type: 'pie'
-                  }], pie_layout, {displayModeBar: false});
+        values: alloc_pie_data.alloc,
+        labels: alloc_pie_data.labels,
+        type: 'pie'
+    }], pie_layout, {displayModeBar: false});
 
 
-    var alloc_table = build_alloc_table_data(portfolio_raw);
+    var alloc_table = build_alloc_table_data(alloc_raw);
     var allocation_body = document.getElementById("allocation-table");
     for (var i = 0; i < alloc_table.length; ++i) {
         tr = create_row(alloc_table[i]);
         allocation_body.appendChild(tr);
     }
 });
-});
-
 
 Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
               function(err, stats_raw) {
