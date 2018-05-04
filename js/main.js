@@ -33,19 +33,10 @@ var build_alloc_data = function(csv_raw) {
     var labels = [];
     var last_row = csv_raw[csv_raw.length - 1];
 
-    var keys = Object.keys(last_row);
-    for (var i = 0; i < keys.length; ++i) {
-        var key = keys[i];
-        if (key == "value") continue;
-        if (key == "") continue;
-        alloc.push(last_row[key]*100);
-        labels.push(key);
-    }
-
     return {
-        values: alloc,
-        labels: labels,
-        type: 'pie'
+        alloc: [last_row["BTC-USD"]*100, last_row["ETH-USD+"]*100,
+                last_row["XRP-USD+"]*100, last_row["cash"]*100],
+        labels: ["BTC", "ETH", "XRP", "USD"]
     };
 };
 
@@ -87,8 +78,12 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
         width: 400
     };
 
-    Plotly.newPlot('alloc_folio_multi', [build_alloc_data(portfolio_raw)],
-                   pie_layout, {displayModeBar: false});
+    alloc_data = build_alloc_data(portfolio_raw);
+    Plotly.newPlot('alloc_folio_multi', [{
+                   values: alloc_data.alloc,
+                   labels: alloc_data.labels,
+                   type: 'pie'
+                  }], pie_layout, {displayModeBar: false});
 });
 });
 
