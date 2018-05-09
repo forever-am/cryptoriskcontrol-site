@@ -54,9 +54,9 @@ var format_float = function(x, decimals) {
 }
 
 var build_alloc_table_data = function(csv_raw) {
-    var current_row = csv_raw[0];
-    var target_row = csv_raw[1];
-    var change_row = csv_raw[2];
+    var current_row = csv_raw.find(row => { return row[""] == "current"; })
+    var target_row = csv_raw.find(row => { return row[""] == "target"; })
+    var change_row = csv_raw.find(row => { return row[""] == "change"; })
 
     return [
         ["BTC", format_percent(target_row["BTC-USD"]),
@@ -105,7 +105,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 });
 
 
-Plotly.d3.csv('/cryptoriskcontrol-site/series/current_alloc_btc_eth_xrp.csv',
+Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp_alloc.csv',
     function(err, alloc_raw) {
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
