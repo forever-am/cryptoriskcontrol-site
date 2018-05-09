@@ -154,5 +154,3 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
     }
 });
 };
-
-
