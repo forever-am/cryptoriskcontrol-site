@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Portfolio Indices Designed for Peace of Mind
+title: Peace of Mind for Crypto Investors
 permalink: /
 ---
 
