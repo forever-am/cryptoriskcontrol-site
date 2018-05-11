@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Crypto Portfolio Index
+title: Crypto Risk Control Index, BTC-ETH-XRP (CRCI3)
 permalink: /
 ---
 
