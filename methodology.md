@@ -4,8 +4,8 @@ title: Methodology
 permalink: /methodology/
 ---
 
-Download [research paper](https://github
-.com/forever-am/cryptoriskcontrol-site/documents/crypto_portfolio_management
+For details, read our [research paper](https://github
+.com/forever-am/cryptoriskcontrol-site/tree/master/documents/crypto_portfolio_management
 .pdf).
 
 
