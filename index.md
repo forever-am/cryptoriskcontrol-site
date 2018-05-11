@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Peace of Mind for Crypto Investors
+title: Crypto Portfolio Index
 permalink: /
 ---
 
-<h1 id="crypto_index_value"></h1>
+<h2 id="crypto_index_value"></h2>
 
 ## Performance
 
@@ -44,7 +44,7 @@ main();
 <thead>
 <tr>
     <th style="text-align: left"></th>
-    <th style="text-align: left">Crypto Risk Control Fund</th>
+    <th style="text-align: left">Crypto Risk Control Index</th>
     <th style="text-align: left">Equal Weights Benchmark</th>
 </tr>
 </thead>
