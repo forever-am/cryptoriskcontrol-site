@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Fund Index
+title: Portfolio Indices Designed for Peace of Mind
 permalink: /
 ---
 
