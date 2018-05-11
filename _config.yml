@@ -1,22 +1,9 @@
 title: Crypto Risk Control
 description: Scientifically constructed cryptocurrency portfolio indices
 sourcecode: "https://github.com/forever-am/cryptoriskcontrol-site"
-disclaimer: " Copyright, Forever Investment Solutions, 2018. Forever
-Investment Solutions does not guarantee the
-timeliness,
-accuracy or completeness of any data or information relating to Crypto
-Risk-Control Index (the Index). Forever Investment Solutions makes no
-warranty, express or implied, as to the Index or any data or values relating
-thereto or results to be obtained therefrom, and expressly disclaims all
-warranties of merchantability and fitness for a particular purpose with
-respect thereto. It is not possible to invest directly in the Index.
-Back-tested performance is not actual performance. Past performance is
-not an indication of future results. To the maximum extent allowed by law,
-Forever Investment Solutions, its licensors, and its and their respective
-employees, contractors, agents, suppliers and vendors shall have no liability
-or responsibility whatsoever for any injury or damages -
-whether direct, indirect, consequential, incidental, punitive or otherwise -
-arising in connection with the Index.
+disclaimer: "Copyright, Forever Investment Solutions, 2018. Forever Investment
+Solutions does not guarantee the
+timeliness, accuracy or completeness of any data or information relating to Crypto Risk-Control Index (the Index). Forever Investment Solutions makes no warranty, express or implied, as to the Index or any data or values relating thereto or results to be obtained therefrom, and expressly disclaims all warranties of merchantability and fitness for a particular purpose with respect thereto. It is not possible to invest directly in the Index. Back-tested performance is not actual performance. Past performance is not an indication of future results. To the maximum extent allowed by law, Forever Investment Solutions, its licensors, and its and their respective employees, contractors, agents, suppliers and vendors shall have no liability or responsibility whatsoever for any injury or damages - whether direct, indirect, consequential, incidental, punitive or otherwise - arising in connection with the Index."
 
 permalink: blog/:year/:month/:day/:title
 exclude: ["Makefile", "README.md"]
