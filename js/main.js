@@ -141,7 +141,8 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
               function(err, stats_raw) {
 
     var stats = [
-        ["Perf.", format_percent(stats_raw[0]["perf"]), format_percent(stats_raw[1]["perf"])],
+        ["Yearly Returns", format_percent(stats_raw[0]["perf"]),
+        format_percent(stats_raw[1]["perf"])],
         ["Volatility", format_percent(stats_raw[0]["vol"]), format_percent(stats_raw[1]["vol"])],
         ["Max Drawdown", format_percent(stats_raw[0]["dd"]), format_percent(stats_raw[1]["dd"])],
         ["Sharpe", format_float(stats_raw[0]["Sharpe"], 2), format_float(stats_raw[1]["Sharpe"], 2)]
