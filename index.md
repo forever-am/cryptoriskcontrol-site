@@ -10,6 +10,21 @@ permalink: /
 
 <div id="crypto_fund_plot" class="graph"></div>
 
+
+### Key Metrics
+
+<table>
+<thead>
+<tr>
+    <th style="text-align: left"></th>
+    <th style="text-align: left">Crypto Risk Control Index</th>
+    <th style="text-align: left">Equal Weights Benchmark</th>
+</tr>
+</thead>
+<tbody id="metrics-table">
+</tbody>
+</table>
+
 ## Allocation
 
 <div class="alloc-container">
@@ -38,16 +53,3 @@ main();
 </script>
 
 
-## Metrics
-
-<table>
-<thead>
-<tr>
-    <th style="text-align: left"></th>
-    <th style="text-align: left">Crypto Risk Control Index</th>
-    <th style="text-align: left">Equal Weights Benchmark</th>
-</tr>
-</thead>
-<tbody id="metrics-table">
-</tbody>
-</table>
