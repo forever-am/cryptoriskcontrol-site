@@ -4,7 +4,7 @@ title: Crypto Risk Control Index (BTC, ETH, XRP) - CRCI3
 permalink: /
 ---
 
-<h2 id="crypto_index_value"></h2>
+<h4 id="crypto_index_value"></h4>
 
 ## Performance
 
