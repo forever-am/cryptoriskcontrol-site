@@ -3,6 +3,7 @@ layout: page
 title: Crypto Risk Control Index (BTC, ETH, XRP) - CRCI3
 permalink: /
 ---
+{{ page.date | date: '%B %d, %Y' }}
 
 <h6 id="crypto_index_value"></h6>
 
