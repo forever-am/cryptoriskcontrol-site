@@ -95,7 +95,8 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 		yaxis: {
 		    autorange: true,
 			type: 'log'
-		}
+		},
+		colors: ['#20B2AA', '#778899']
     }, {displayModeBar: false});
 
     index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["value"]);
