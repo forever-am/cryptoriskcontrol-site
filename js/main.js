@@ -110,6 +110,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp_alloc.csv',
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
         plot_bgcolor: 'rgba(0,0,0,0)',
+        colors: ['#4682B4', '#008080', '#CD5C5C', '#2E8B57'],
         height: 200,
         width: 300,
         margin: {
