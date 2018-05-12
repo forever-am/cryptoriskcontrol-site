@@ -3,20 +3,16 @@ layout: page
 title: About us
 permalink: /about-us/
 ---
-## Portfolio Construction
+### Portfolio Construction
 
-### Sylvain Chassang
+#### Sylvain Chassang
 
-
-### Alice Wang
-
-
-## Index Advisory Board
-
-### Guillaume de Martel
+#### Alice Wang
 
 
+### Index Advisory Board
 
-### Alex
+#### Guillaume de Martel
 
-Consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+#### Alex
+
