@@ -1,5 +1,5 @@
 title: Crypto Risk Control
-description: Invest with Peace of Mind
+description: Helping Crypto Investors Sleep Better
 sourcecode: "https://github.com/forever-am/cryptoriskcontrol-site"
 disclaimer: "Copyright, Forever Investment Solutions, 2018. Forever Investment
 Solutions does not guarantee the
@@ -21,7 +21,7 @@ permalink: blog/:year/:month/:day/:title
 exclude: ["Makefile", "README.md"]
 
 url: "https://forever-am.github.io"     # the base hostname & protocol for your site
-baseurl: "/cryptoriskcontrol-site"                   # the subpath of your site, e.g. /blog
+baseurl: "/cryptoriskcontrol-site"      # the subpath of your site, e.g. /blog
 
 author:
     name:
