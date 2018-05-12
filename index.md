@@ -10,7 +10,7 @@ permalink: /
 
 <div id="crypto_fund_plot" class="graph"></div>
 
-<table align="left">
+<table>
 <thead>
 <tr>
     <th style="text-align: left"></th>
