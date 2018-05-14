@@ -17,11 +17,13 @@ responsibility whatsoever for any injury or damages - whether direct, indirect,
  consequential, incidental, punitive or otherwise - arising in connection
  with the Index."
 
+js_src: js/main.js
+
 permalink: blog/:year/:month/:day/:title
 exclude: ["Makefile", "README.md"]
 
-url: "https://forever-am.github.io"     # the base hostname & protocol for your site
-baseurl: "/cryptoriskcontrol-site"      # the subpath of your site, e.g. /blog
+url: "http://cryptoriskcontrol.com"     # the base hostname & protocol for your site
+baseurl: "/"      # the subpath of your site, e.g. /blog
 
 author:
     name:

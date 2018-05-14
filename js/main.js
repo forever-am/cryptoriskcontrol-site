@@ -1,5 +1,8 @@
 
 var main = function() {
+
+BASE_URI = ""
+
 var create_row = function(row_data) {
     var tr = document.createElement("tr");
     for (var i = 0; i < row_data.length; ++i) {
@@ -75,9 +78,9 @@ var build_alloc_table_data = function(csv_raw) {
 };
 
 
-Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp.csv',
               function(err, portfolio_raw) {
-Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp.csv',
               function(err, benchmark_raw) {
     var plot_data = [
         build_plot_data(portfolio_raw, 'Crypto Risk Control Index'),
@@ -106,7 +109,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_equal-weight_btc_eth_xrp.csv
 });
 
 
-Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp_alloc.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_alloc.csv',
     function(err, alloc_raw) {
     var pie_layout = {
         paper_bgcolor: 'rgba(0,0,0,0)',
@@ -139,7 +142,7 @@ Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_btc_eth_xrp_alloc.csv',
     }
 });
 
-Plotly.d3.csv('/cryptoriskcontrol-site/series/folio_quick_stats.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
               function(err, stats_raw) {
 
     var stats = [
