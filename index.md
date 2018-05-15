@@ -55,7 +55,7 @@ permalink: /
     <th style="text-align: left">Mar</th>
     <th style="text-align: left">Apr</th>
     <th style="text-align: left">May</th>
-    <th style="text-align: left">Jun/th>
+    <th style="text-align: left">Jun</th>
     <th style="text-align: left">Jul</th>
     <th style="text-align: left">Aug</th>
     <th style="text-align: left">Sep</th>
