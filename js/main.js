@@ -159,4 +159,13 @@ Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
         metrics_body.appendChild(tr);
     }
 });
+
+Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_monthly_ret.csv',
+              function(err, stats_raw) {
+    var metrics_body = document.getElementById("monthly-ret-table");
+    for (var i = 0; i < stats_raw.length; ++i) {
+        tr = create_row(Object.values(stats_raw));
+        metrics_body.appendChild(tr);
+    }
+});
 };
