@@ -79,9 +79,9 @@ var build_alloc_table_data = function(csv_raw) {
 };
 
 
-Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_perf.csv',
               function(err, portfolio_raw) {
-Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp.csv',
+Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp_perf.csv',
               function(err, benchmark_raw) {
     var plot_data = [
         build_plot_data(portfolio_raw, 'Crypto Risk Control Index'),
@@ -145,6 +145,11 @@ Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_alloc.csv',
 
 Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
               function(err, stats_raw) {
+Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_ret_summary.csv',
+              function(err, ret_summary) {
+
+
+
 
     var stats = [
         ["Yearly Returns", format_percent(stats_raw[0]["perf"]),
@@ -159,7 +164,7 @@ Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
         tr = create_row(stats[i]);
         metrics_body.appendChild(tr);
     }
-});
+});});
 
 Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_monthly_ret.csv',
               function(err, stats_raw) {
