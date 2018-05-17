@@ -20,7 +20,7 @@ var build_plot_data = function(csv_raw, name) {
 
     csv_raw.map(function(row, i) {
         date[i] = row[''];
-        value[i] = row['value'];
+        value[i] = row['perf'];
     });
 
     return {
@@ -103,7 +103,7 @@ Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp_perf.csv',
 		colors: ['#20B2AA', '#778899']
     }, {displayModeBar: false});
 
-    index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["value"]);
+    index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["perf"]);
     index_element = document.getElementById("crypto_index_value");
     index_element.textContent = index_value.toLocaleString().split(".")[0];
 });
