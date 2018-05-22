@@ -153,10 +153,10 @@ function summary_to_map(ret_summary) {
 }
 
 function format_ret_summary(ret_map) {
-    return format_percent("D: " + ret_map["D"]) + " | " +
-           format_percent("M: " + ret_map["M"]) + " | " +
-           format_percent("YTD: " + ret_map["YTD"]) + " | " +
-           format_percent("Y: " + ret_map["Y"]);
+    return "D: " +  format_percent(ret_map["D"]) + " | " +
+           "M: " + format_percent(ret_map["M"]) + " | " +
+           "YTD: " + format_percent(ret_map["YTD"]) + " | " +
+           "Y: " + format_percent(ret_map["Y"]);
 }
 
 Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
