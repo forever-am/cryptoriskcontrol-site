@@ -6,22 +6,8 @@ permalink: /
 {{ page.date | date: '%B %d, %Y' }}
 
 <h6 id="crypto_index_value"></h6>
+<div id="crypto_index_perf"></div>
 
-## Performance
-
-<div id="crypto_fund_plot" class="graph"></div>
-
-<table>
-<thead>
-<tr>
-    <th style="text-align: left"></th>
-    <th style="text-align: left">Crypto Risk Control Index</th>
-    <th style="text-align: left">Equal Weights Benchmark</th>
-</tr>
-</thead>
-<tbody id="metrics-table">
-</tbody>
-</table>
 
 ## Allocation
 
@@ -42,6 +28,22 @@ permalink: /
     </div>
     <div id="alloc_folio_multi" class="alloc-pie graph"></div>
 </div>
+
+## Performance
+
+<div id="crypto_fund_plot" class="graph"></div>
+
+<table>
+<thead>
+<tr>
+    <th style="text-align: left"></th>
+    <th style="text-align: left">Crypto Risk Control Index</th>
+    <th style="text-align: left">Equal Weights Benchmark</th>
+</tr>
+</thead>
+<tbody id="metrics-table">
+</tbody>
+</table>
 
 
 ## Monthly return

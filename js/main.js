@@ -153,11 +153,10 @@ function summary_to_map(ret_summary) {
 }
 
 function format_ret_summary(ret_map) {
-    return format_percent(ret_map["D"]) + " | " +
-           format_percent(ret_map["M"]) + " | " +
-           format_percent(ret_map["YTD"]) + " | " +
-           format_percent(ret_map["Y"]) + " | " +
-           format_percent(ret_map["Start (yearly)"]);
+    return format_percent("D: " + ret_map["D"]) + " | " +
+           format_percent("M: " + ret_map["M"]) + " | " +
+           format_percent("YTD: " + ret_map["YTD"]) + " | " +
+           format_percent("Y: " + ret_map["Y"]);
 }
 
 Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
@@ -166,8 +165,11 @@ Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_ret_summary.csv',
               function(err, ret_summary) {
     var ret_map = summary_to_map(ret_summary);
 
+    var metrics_body = document.getElementById("crypto_index_perf");
+    metrics_body.textContent = format_ret_summary(ret_map);
+
     var stats = [
-        ["D | M | YTD | Y | Start (yearly)", format_ret_summary(ret_map),
+        ["Perf.", format_percent(ret_map["Start (yearly)"]),
         format_percent(stats_raw[1]["perf"])],
         ["Volatility", format_percent(stats_raw[0]["vol"]), format_percent(stats_raw[1]["vol"])],
         ["Max Drawdown", format_percent(stats_raw[0]["dd"]), format_percent(stats_raw[1]["dd"])],
