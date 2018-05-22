@@ -143,16 +143,31 @@ Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_alloc.csv',
     }
 });
 
+function summary_to_map(ret_summary) {
+    var res = {};
+    for (var i = 0; i < ret_summary.length; ++i) {
+        res[ret_summary[i][""]] = ret_summary[i]["return_summary"];
+    }
+
+    return res;
+}
+
+function format_ret_summary(ret_map) {
+    return format_percent(ret_map["D"]) + " | " +
+           format_percent(ret_map["M"]) + " | " +
+           format_percent(ret_map["YTD"]) + " | " +
+           format_percent(ret_map["Y"]) + " | " +
+           format_percent(ret_map["Start (yearly)"]);
+}
+
 Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
               function(err, stats_raw) {
 Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_ret_summary.csv',
               function(err, ret_summary) {
-
-
-
+    var ret_map = summary_to_map(ret_summary);
 
     var stats = [
-        ["Yearly Returns", format_percent(stats_raw[0]["perf"]),
+        ["D | M | YTD | Y | Start (yearly)", format_ret_summary(ret_map),
         format_percent(stats_raw[1]["perf"])],
         ["Volatility", format_percent(stats_raw[0]["vol"]), format_percent(stats_raw[1]["vol"])],
         ["Max Drawdown", format_percent(stats_raw[0]["dd"]), format_percent(stats_raw[1]["dd"])],
