@@ -157,8 +157,9 @@ function summary_to_map(ret_summary) {
 }
 
 function format_ret_summary(ret_map) {
-    return "D: " +  format_percent(ret_map["D"]) + " | " +
-           "M: " + format_percent(ret_map["M"]) + " | " +
+    return "1D: " +  format_percent(ret_map["D"]) + " | " +
+           "MTD: " + format_percent(ret_map["MTD"]) + " | " +
+           "1M: " + format_percent(ret_map["M"]) + " | " +
            "YTD: " + format_percent(ret_map["YTD"]) + " | " +
            "12M: " + format_percent(ret_map["Y"]);
 }
