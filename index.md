@@ -7,7 +7,7 @@ permalink: /
 
 <h6 id="crypto_index_value"></h6>
 <div id="crypto_index_perf"></div>
-
+<div id="as_of_date"></div>
 
 ## Allocation
 

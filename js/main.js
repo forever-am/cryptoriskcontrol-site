@@ -106,6 +106,10 @@ Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp_perf.csv',
     index_value = Number.parseFloat(portfolio_raw[portfolio_raw.length - 1]["perf"]);
     index_element = document.getElementById("crypto_index_value");
     index_element.textContent = index_value.toLocaleString().split(".")[0];
+
+    index_date = portfolio_raw[portfolio_raw.length - 1][""];
+    index_date_element = document.getElementById("as_of_date");
+    index_date_element.textContent = index_date;
 });
 });
 
@@ -156,7 +160,7 @@ function format_ret_summary(ret_map) {
     return "D: " +  format_percent(ret_map["D"]) + " | " +
            "M: " + format_percent(ret_map["M"]) + " | " +
            "YTD: " + format_percent(ret_map["YTD"]) + " | " +
-           "Y: " + format_percent(ret_map["Y"]);
+           "12M: " + format_percent(ret_map["Y"]);
 }
 
 Plotly.d3.csv(BASE_URI + '/series/folio_quick_stats.csv',
