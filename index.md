@@ -48,26 +48,9 @@ permalink: /
 
 ## Monthly return
 
-<table>
-<thead>
-<tr>
-    <th style="text-align: left"></th>
-    <th style="text-align: left">Jan</th>
-    <th style="text-align: left">Feb</th>
-    <th style="text-align: left">Mar</th>
-    <th style="text-align: left">Apr</th>
-    <th style="text-align: left">May</th>
-    <th style="text-align: left">Jun</th>
-    <th style="text-align: left">Jul</th>
-    <th style="text-align: left">Aug</th>
-    <th style="text-align: left">Sep</th>
-    <th style="text-align: left">Oct</th>
-    <th style="text-align: left">Nov</th>
-    <th style="text-align: left">Dec</th>
-</tr>
-</thead>
-<tbody id="monthly-ret-table">
-</tbody>
+<table id="monthly-ret-table">
+<thead></thead>
+<tbody></tbody>
 </table>
 
 <script>

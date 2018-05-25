@@ -44,7 +44,9 @@ var build_alloc_pie_data = function(csv_raw) {
 };
 
 var format_percent = function(x) {
-    return  (Number.parseFloat(x)*100).toFixed(1) + "%";
+    if (x === "") return "";
+    var x_ = Number.parseFloat(x)
+    return  (Number.parseFloat(x_)*100).toFixed(1) + "%";
 }
 
 var format_percent_with_plus = function(x) {
@@ -188,14 +190,56 @@ Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_ret_summary.csv',
     }
 });});
 
+
+var Table = function() {
+    var Table = function Table(table_id) {
+        this.table_id = table_id;
+        this.table_element = document.getElementById(this.table_id);
+        this.header = this.table_element.children[0]
+        this.body = this.table_element.children[1]
+    };
+
+    var clear_children = function(element) {
+        for (var i = 0; i < element.children.length; ++i) {
+            element.removeChild(element.children[i]);
+        }
+    };
+
+    Table.prototype.clear = function() {
+        clear_children(this.header)
+        clear_children(this.body)
+    };
+
+    Table.prototype.append_header = function(row) {
+        tr = create_row(row);
+        this.header.appendChild(tr);
+    };
+
+    Table.prototype.append_row = function(row) {
+        tr = create_row(row);
+        this.body.appendChild(tr);
+    };
+
+    Table.prototype.print_dataframe = function(df, formatter) {
+        formatter = formatter ? formatter : (function(x) { return x; });
+        this.clear();
+
+        header = Object.keys(df[0])
+        this.append_header(header)
+
+        for (var i = 0; i < df.length; ++i) {
+            row = Object.values(df[i])
+            pretty_row = [row[0]].concat(row.slice(1).map(formatter))
+            this.append_row(pretty_row)
+        }
+    };
+
+    return Table;
+}();
+
 Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_monthly_ret.csv',
               function(err, stats_raw) {
-    var metrics_body = document.getElementById("monthly-ret-table");
-    for (var i = 0; i < stats_raw.length; ++i) {
-        row = Object.values(stats_raw[i])
-        pretty_row = [row[0]].concat(row.slice(1).map(format_percent_with_plus))
-        tr = create_row(pretty_row);
-        metrics_body.appendChild(tr);
-    }
+    monthly_table = new Table("monthly-ret-table");
+	monthly_table.print_dataframe(stats_raw, format_percent);
 });
 };
