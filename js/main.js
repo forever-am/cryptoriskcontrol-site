@@ -174,13 +174,21 @@ Plotly.d3.csv(BASE_URI + '/series/folio_btc_eth_xrp_ret_summary.csv',
 
     var metrics_body = document.getElementById("crypto_index_perf");
     metrics_body.textContent = format_ret_summary(ret_map);
+    var stats = {};
+    
+    for (var i = 0; i < stats_raw.length; ++i) {
+        stats[stats_raw[i][""]] = stats_raw[i];
+    }
+
+    var index_stat = stats["folio_btc_eth_xrp"];
+    var bench_stat = stats["folio_equal-weight_btc_eth_xrp"];
 
     var stats = [
         ["Perf.", format_percent(ret_map["Start (yearly)"]),
-        format_percent(stats_raw[1]["perf"])],
-        ["Volatility", format_percent(stats_raw[0]["vol"]), format_percent(stats_raw[1]["vol"])],
-        ["Max Drawdown", format_percent(stats_raw[0]["dd"]), format_percent(stats_raw[1]["dd"])],
-        ["Sharpe", format_float(stats_raw[0]["Sharpe"], 2), format_float(stats_raw[1]["Sharpe"], 2)]
+        format_percent(bench_stat["perf"])],
+        ["Volatility", format_percent(index_stat["vol"]), format_percent(bench_stat["vol"])],
+        ["Max Drawdown", format_percent(index_stat["dd"]), format_percent(bench_stat["dd"])],
+        ["Sharpe", format_float(index_stat["Sharpe"], 2), format_float(bench_stat["Sharpe"], 2)]
     ];
 
     var metrics_body = document.getElementById("metrics-table");
