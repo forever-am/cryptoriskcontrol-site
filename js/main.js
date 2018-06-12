@@ -112,6 +112,8 @@ Plotly.d3.csv(BASE_URI + '/series/folio_equal-weight_btc_eth_xrp_perf.csv',
     index_date = portfolio_raw[portfolio_raw.length - 1][""];
     index_date_element = document.getElementById("as_of_date");
     index_date_element.textContent = index_date;
+    index_date_alloc_element = document.getElementById("as_of_date_alloc");
+    index_date_alloc_element.textContent = "(" + index_date + ")";
 });
 });
 
