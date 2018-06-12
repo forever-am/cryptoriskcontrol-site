@@ -9,7 +9,8 @@ permalink: /
 <div id="crypto_index_perf"></div>
 <div id="as_of_date"></div>
 
-<h2>Allocation</h2><div id="as_of_date_alloc"></div>
+<h2 style="display: inline-block">Allocation</h2>
+<div id="as_of_date_alloc"></div>
 
 <div class="alloc-container">
     <div class="alloc-table">
