@@ -78,6 +78,6 @@ minmax drawdown portfolio against bitcoin and cash." align="center" %}
 <br/>
 
 Crypto Risk Control Indices apply the Minmax Drawdown Control framework to 
-different subsets of volatility-adjusted crypto-currencies. So far our 
-flagship index, CRC3 invests in the three highest market cap crypto-currencies.
-We will introduce other indices in the coming months.
+different subsets of volatility-adjusted crypto-currencies. Our 
+first index, CRC3, invests in the three highest market cap 
+crypto-currencies. We will introduce other indices in the coming months.
