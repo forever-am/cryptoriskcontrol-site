@@ -9,7 +9,7 @@ permalink: /
 <div id="crypto_index_perf"></div>
 <div id="as_of_date"></div>
 
-## Allocation
+<h2>Allocation</h2><div id="as_of_date_alloc"></div>
 
 <div class="alloc-container">
     <div class="alloc-table">
