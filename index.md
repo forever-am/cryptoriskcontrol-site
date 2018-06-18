@@ -9,6 +9,11 @@ permalink: /
 <div id="crypto_index_perf"></div>
 <div id="as_of_date"></div>
 
+CRC3 is a crypto-currency portfolio index. Its allocation weights are 
+updated using [Minmax Drawdown Control](/methodology) in order to achieve 
+upside exposure to the top three crypto-currencies by market-cap (currently 
+BTC, ETH and XRP) while robustly limiting downside risk. 
+
 ## Allocation
 <div id="as_of_date_alloc"></div>
 
