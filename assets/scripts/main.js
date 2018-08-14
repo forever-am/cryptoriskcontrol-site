@@ -80,11 +80,10 @@ var CRCPerformance = (function (hc) {
             },
 
             yAxis: {
-                min: .001,
-                minPadding: .75,
-                softMin: 300,
+                minPadding: 0.,
+                maxPadding: 0.,
                 type: 'logarithmic',
-                minorTickInterval: .1,
+                minorTickInterval: .01,
                 opposite: false,
                 minorGridLineWidth: 0,
                 gridLineColor: '#ddd',
