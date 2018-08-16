@@ -1,13 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://cryptoriskcontrol.com//feed.xml" rel="self" type="application/atom+xml" /><link href="http://cryptoriskcontrol.com//" rel="alternate" type="text/html" /><updated>2018-08-14T11:43:28+02:00</updated><id>http://cryptoriskcontrol.com//</id><title type="html">Crypto Risk Control</title><subtitle>Low Drawdown Portfolio Indices for Crypto Investors</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://cryptoriskcontrol.com//blog/welcome-to-jekyll.markdown.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-05-24T21:41:17+02:00</published><updated>2018-05-24T21:41:17+02:00</updated><id>http://cryptoriskcontrol.com//blog/welcome-to-jekyll.markdown</id><content type="html" xml:base="http://cryptoriskcontrol.com//blog/welcome-to-jekyll.markdown.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://cryptoriskcontrol.com//feed.xml" rel="self" type="application/atom+xml" /><link href="http://cryptoriskcontrol.com//" rel="alternate" type="text/html" /><updated>2018-08-16T10:50:20-04:00</updated><id>http://cryptoriskcontrol.com//</id><title type="html">Crypto Risk Control</title><subtitle>Low Drawdown Portfolio Indices for Crypto Investors</subtitle><entry><title type="html">Invest Like It’s 1997</title><link href="http://cryptoriskcontrol.com//blog/invest-like-it-is-1997.html" rel="alternate" type="text/html" title="Invest Like It's 1997" /><published>2018-08-11T00:00:00-04:00</published><updated>2018-08-11T00:00:00-04:00</updated><id>http://cryptoriskcontrol.com//blog/invest-like-it-is-1997</id><content type="html" xml:base="http://cryptoriskcontrol.com//blog/invest-like-it-is-1997.html">&lt;p&gt;Investing is a bit like rock-climbing that way. Before you take big 
+rewarding risks, make sure you have good risk management in place. Crypto is
+ a good example.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h4 id=&quot;three-times-bitcoin-lost-80-of-its-value&quot;&gt;Three times Bitcoin lost 80% of its value&lt;/h4&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;h4 id=&quot;why-volatility-control-doesnt-help&quot;&gt;Why volatility control doesn’t help&lt;/h4&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;drawdown-control&quot;&gt;Drawdown control&lt;/h4&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>sylvain_chassang</name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;h4 id=&quot;how-much-can-you-hodl&quot;&gt;How much can you HODL?&lt;/h4&gt;</content><author><name>sylvain_chassang</name></author><summary type="html">Investing is a bit like rock-climbing that way. Before you take big rewarding risks, make sure you have good risk management in place. Crypto is a good example.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://cryptoriskcontrol.com//assets/images/blog/nasdaq.png" /></entry><entry><title type="html">Why Crypto Investors Need Good Risk Management</title><link href="http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management.html" rel="alternate" type="text/html" title="Why Crypto Investors Need Good Risk Management" /><published>2018-08-10T00:00:00-04:00</published><updated>2018-08-10T00:00:00-04:00</updated><id>http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management</id><content type="html" xml:base="http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management.html">&lt;p&gt;Investing is a bit like rock-climbing that way. Before you take big 
+rewarding risks, it’s a good idea to have good risk management in 
+place. Crypto is a good example.&lt;/p&gt;
+
+&lt;h4 id=&quot;three-times-bitcoin-lost-70-of-its-value&quot;&gt;Three times Bitcoin lost 70% of its value&lt;/h4&gt;
+
+&lt;p&gt;Even including the current bear market, Crypto is clearly one of these big 
+rewarding risks. Take Bitcoin as an example, since 2011, it’s been averaging
+ yearly returns
+around [XXX], for a volatility of [XXX], neglecting the risk-free rate,&lt;br /&gt;
+that’s a Sharpe of  [XXX]. As 
+a comparison, the average Sharpe of the SP500 over the last 20 years is [XXX].
+The sharpe of Nasdaq from 1993 to 2000 was [XXX].&lt;/p&gt;
+
+&lt;p&gt;The catch is that Crypto also gets very large drawdowns. In fact, since 
+2011, there have been three times where Bitcoin lost at least 70% of its value.
+In the last two crashes, from [XXX] to [XXX], and [XXX] to [XXX] bitcoin 
+actually lost  more than 90% of its value.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cryptoriskcontrol.com//assets/images/blog/crashes.png&quot; alt=&quot;crashes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This makes it very hard for any one to invest a serious share of their 
+portfolio in Crypto. From an emotional perspective, it’s easy enough to HODL 
+when you got your crypto for dirt cheap, in the early days of mining. It’s 
+much harder when you’re investing savings accumulated over years of hard 
+work.&lt;/p&gt;
+
+&lt;p&gt;Without any risk management in place, the money you invest needs to be 
+money you can afford to lose entirely.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-volatility-control-doesnt-help&quot;&gt;Why volatility control doesn’t help&lt;/h4&gt;
+
+&lt;h4 id=&quot;drawdown-control&quot;&gt;Drawdown control&lt;/h4&gt;</content><author><name>sylvain_chassang</name></author><summary type="html">Investing is a bit like rock-climbing that way. Before you take big rewarding risks, it’s a good idea to have good risk management in place. Crypto is a good example.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://cryptoriskcontrol.com//assets/images/blog/rope.jpg" /></entry></feed>
