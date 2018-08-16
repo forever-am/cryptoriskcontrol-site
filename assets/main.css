@@ -350,8 +350,8 @@ table {
       border-width: 0 1px; }
 
 .entry-content {
-  font-size: 15px;
-  line-height: 1.4; }
+  font-size: 18px;
+  line-height: 1.6; }
   .entry-content p:not(:last-child) {
     margin-bottom: 15px; }
   .entry-content h1,
@@ -360,7 +360,7 @@ table {
   .entry-content h4,
   .entry-content h5,
   .entry-content h6 {
-    text-align: center;
+    text-align: left;
     font-weight: 400;
     line-height: 1.4;
     color: #212121; }
