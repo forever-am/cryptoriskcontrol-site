@@ -334,7 +334,7 @@ var tableIndicators = function () {
 
     fetch('../assets/data/CRC3_perf.json').then(function (response) {
         response.json().then(function (json) {
-            window.jsonData.performanceIndex = Object.entries(json.perf).map(function (item) {
+            window.jsonData.performanceIndex = Object.entries(json).map(function (item) {
                 return [parseFloat(item[0]), item[1]];
             }).sort(function (a, b) {
                 return (a[0] || 0) - (b[0] || 0);
@@ -365,9 +365,9 @@ var tableIndicators = function () {
                     day: 'numeric'
                 })});
 
-            return fetch('../assets/data/folio_equal-weight_btc_eth_xrp_perf.json').then(function (response) {
+            return fetch('../assets/data/Bitcoin_perf.json').then(function (response) {
                 response.json().then(function (json) {
-                    window.jsonData.performanceEwb = Object.entries(json.perf).map(function (item) {
+                    window.jsonData.performanceEwb = Object.entries(json).map(function (item) {
                         return [parseFloat(item[0]), item[1]];
                     }).sort(function (a, b) {
                         return (a[0] || 0) - (b[0] || 0);
