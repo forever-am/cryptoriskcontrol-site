@@ -191,18 +191,20 @@ var toggleMenu = function () {
 // Table expand on click
 var tableExpand = function () {
     var trigger = document.getElementById('expand-table');
-    var hiddenRows = document.querySelectorAll('.mr-data .to-show');
     var switcher = false;
 
-    if (trigger) {
-        trigger.addEventListener('click', function () {
-            switcher = !switcher;
-            hiddenRows.forEach(function (item) {
-                item.classList.toggle('to-show');
-            });
-            switcher ? trigger.innerHTML = 'Show Less' : trigger.innerHTML = 'Show More';
-        });
+    if (!trigger) {
+        return;
     }
+
+    trigger.addEventListener('click', function () {
+        switcher = !switcher;
+        document.querySelectorAll('.mr-data tr').forEach(function (item, index) {
+            (index > 3) && item.classList.toggle('to-show');
+        });
+
+        switcher ? trigger.innerHTML = 'Show Less' : trigger.innerHTML = 'Show More';
+    });
 };
 
 var tableIndicators = function () {
@@ -222,6 +224,188 @@ var tableIndicators = function () {
     });
 };
 
+(function () {
+    window.jsonData = {};
+
+    fetch('../assets/data/CRC3_alloc.json').then(function (response) {
+        response.json().then(function (json) {
+            window.jsonData.allocation = json;
+
+            if (!document.getElementById('allocation-chart')) {
+                return;
+            }
+
+            var allocationJsonBtc1 = document.getElementById('allocation-json-btc-1');
+            var allocationJsonBtc0 = document.getElementById('allocation-json-btc-0');
+            var allocationJsonBtcConclude = document.getElementById('allocation-json-btc-conclude');
+            var allocationJsonEth1 = document.getElementById('allocation-json-eth-1');
+            var allocationJsonEth0 = document.getElementById('allocation-json-eth-0');
+            var allocationJsonEthConclude = document.getElementById('allocation-json-eth-conclude');
+            var allocationJsonXrp1 = document.getElementById('allocation-json-xrp-1');
+            var allocationJsonXrp0 = document.getElementById('allocation-json-xrp-0');
+            var allocationJsonXrpConclude = document.getElementById('allocation-json-xrp-conclude');
+            var allocationJsonCash1 = document.getElementById('allocation-json-cash-1');
+            var allocationJsonCash0 = document.getElementById('allocation-json-cash-0');
+            var allocationJsonCashConclude = document.getElementById('allocation-json-cash-conclude');
+
+            allocationJsonBtc1 && (allocationJsonBtc1.innerHTML = ((parseFloat(json['BTC-USD'][1]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonBtc0 && (allocationJsonBtc0.innerHTML = ((parseFloat(json['BTC-USD'][0]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonBtcConclude && (allocationJsonBtcConclude.innerHTML = (parseFloat(json['BTC-USD'][2]) > 0 ? '+' : '') + ((parseFloat(json['BTC-USD'][2]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEth1 && (allocationJsonEth1.innerHTML = ((parseFloat(json['ETH-USD+'][1]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEth0 && (allocationJsonEth0.innerHTML = ((parseFloat(json['ETH-USD+'][0]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEthConclude && (allocationJsonEthConclude.innerHTML = (parseFloat(json['ETH-USD+'][2]) > 0 ? '+' : '') + ((parseFloat(json['ETH-USD+'][2]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrp1 && (allocationJsonXrp1.innerHTML = ((parseFloat(json['XRP-USD+'][1]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrp0 && (allocationJsonXrp0.innerHTML = ((parseFloat(json['XRP-USD+'][0]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrpConclude && (allocationJsonXrpConclude.innerHTML = (parseFloat(json['XRP-USD+'][2]) > 0 ? '+' : '') + ((parseFloat(json['XRP-USD+'][2]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCash1 && (allocationJsonCash1.innerHTML = ((parseFloat(json['cash'][1]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCash0 && (allocationJsonCash0.innerHTML = ((parseFloat(json['cash'][0]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCashConclude && (allocationJsonCashConclude.innerHTML = (parseFloat(json['cash'][2]) > 0 ? '+' : '') + ((parseFloat(json['cash'][2]) || 0) * 100).toFixed(1) + '%');
+
+            new Allocation('allocation-chart', [
+                { name: 'BTC', y: parseFloat(json['BTC-USD'][1]), color: '#23a899' },
+                { name: 'ETH', y: parseFloat(json['ETH-USD+'][1]), color: '#243a73' },
+                { name: 'XRP', y: parseFloat(json['XRP-USD+'][1]), color: '#3e3e3e' },
+                { name: 'USD', y: parseFloat(json['cash'][1]), color: '#e6e7e9' },
+            ].sort(function (a, b) {
+                return a.y < b.y;
+            }).map(function (item, index) {
+                if (index === 0) {
+                    item.sliced = true;
+                    item.selected = true;
+                }
+
+                return item;
+            }));
+        });
+    });
+
+    fetch('../assets/data/CRC3_ret_summary.json').then(function (response) {
+        response.json().then(function (json) {
+            window.jsonData.index = json;
+
+            var perfStartYearly = document.getElementById('perf-start-yearly');
+            var dataReturnSummary0 = document.getElementById('data-return-summary-0');
+            var dataReturnSummary2 = document.getElementById('data-return-summary-2');
+            var dataReturnSummary3 = document.getElementById('data-return-summary-3');
+            var dataReturnSummary4 = document.getElementById('data-return-summary-4');
+
+            perfStartYearly && (perfStartYearly.innerHTML = ((parseFloat(json['return_summary'][5]) || 0) * 100).toFixed(1) + '%');
+            dataReturnSummary0 && (dataReturnSummary0.innerHTML = (parseFloat(json['return_summary'][0]) || 0).toFixed(1) + '%');
+            dataReturnSummary2 && (dataReturnSummary2.innerHTML = (parseFloat(json['return_summary'][2]) || 0).toFixed(1) + '%');
+            dataReturnSummary3 && (dataReturnSummary3.innerHTML = (parseFloat(json['return_summary'][3]) || 0).toFixed(1) + '%');
+            dataReturnSummary4 && (dataReturnSummary4.innerHTML = (parseFloat(json['return_summary'][4]) || 0).toFixed(1) + '%');
+        });
+    });
+
+    fetch('../assets/data/CRC3_monthly_ret.json').then(function (response) {
+        response.json().then(function (json) {
+            window.jsonData.monthlyReturn = json;
+            var tableBody = document.getElementById('monthly-return-table-body');
+
+            if (!tableBody) {
+                return;
+            }
+
+            Object.keys(json.year).sort(function (a, b) {
+                return parseInt(b) - parseInt(a);
+            }).forEach(function (key, index) {
+                var row = document.createElement('tr');
+                row.innerHTML = '<td>' + json.year[key] + '<div class="indicator">' + json.year[key] + '</div></td>';
+
+                (index > 3) && row.classList.add('to-show');
+
+                ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Year'].forEach(function (item) {
+                    var value = json[item][key] ? (parseFloat(json[item][key]) * 100).toFixed(1) : '';
+
+                    row.innerHTML += '<td>' + value + '</td>';
+                });
+
+                tableBody.appendChild(row);
+
+                tableIndicators();
+                tableExpand();
+            });
+        });
+    });
+
+    fetch('../assets/data/CRC3_perf.json').then(function (response) {
+        response.json().then(function (json) {
+            window.jsonData.performanceIndex = Object.entries(json.perf).map(function (item) {
+                return [parseFloat(item[0]), item[1]];
+            }).sort(function (a, b) {
+                return (a[0] || 0) - (b[0] || 0);
+            });
+
+            var crcIndexDate = window.jsonData.performanceIndex[window.jsonData.performanceIndex.length - 1][0];
+            var crcIndexValue = window.jsonData.performanceIndex[window.jsonData.performanceIndex.length - 1][1];
+
+            var crcIndexDateElement = document.getElementById('crc-index-date');
+            var crcIndexValueElement = document.getElementById('crc-index-value');
+
+            var date = new Date(crcIndexDate);
+            crcIndexDateElement && (crcIndexDateElement.innerText = date.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit'
+            }) + ', ' + date.toLocaleDateString('en-US', {
+                month: 'short',
+                year: 'numeric',
+                day: 'numeric'
+            }));
+
+            crcIndexValueElement && (crcIndexValueElement.innerText = parseFloat(crcIndexValue).toFixed(0));
+
+            document.querySelectorAll('.crc-date').forEach(function (item) {
+                item.innerHTML = new Date(crcIndexDate).toLocaleDateString('en-US', {
+                    month: 'short',
+                    year: 'numeric',
+                    day: 'numeric'
+                })});
+
+            return fetch('../assets/data/folio_equal-weight_btc_eth_xrp_perf.json').then(function (response) {
+                response.json().then(function (json) {
+                    window.jsonData.performanceEwb = Object.entries(json.perf).map(function (item) {
+                        return [parseFloat(item[0]), item[1]];
+                    }).sort(function (a, b) {
+                        return (a[0] || 0) - (b[0] || 0);
+                    });
+
+                    if (!document.getElementById('performance-chart')) {
+                        return;
+                    }
+
+                    new CRCPerformance('performance-chart', {
+                        crc: window.jsonData.performanceIndex,
+                        ewb: window.jsonData.performanceEwb
+                    });
+                });
+            });
+        });
+    });
+
+    fetch('../assets/data/folio_quick_stats.json').then(function (response) {
+        response.json().then(function (json) {
+            window.jsonData.performanceQuickStats = json;
+
+            var qdnp = document.getElementById('quick-data-net-perf');
+            var qdv0 = document.getElementById('quick-data-vol-0');
+            var qdv3 = document.getElementById('quick-data-vol-3');
+            var qdd0 = document.getElementById('quick-data-dd-0');
+            var qdd3 = document.getElementById('quick-data-dd-3');
+            var qds0 = document.getElementById('quick-data-sharpe-0');
+            var qds3 = document.getElementById('quick-data-sharpe-3');
+
+            qdnp && (qdnp.innerHTML = ((parseFloat(json["net perf/dd"][3]) || 0) * 100).toFixed(1) + '%');
+            qdv0 && (qdv0.innerHTML = ((parseFloat(json["vol"][0]) || 0) * 100).toFixed(1) + '%');
+            qdv3 && (qdv3.innerHTML = ((parseFloat(json["vol"][3]) || 0) * 100).toFixed(1) + '%');
+            qdd0 && (qdd0.innerHTML = ((parseFloat(json["dd"][0]) || 0) * 100).toFixed(1) + '%');
+            qdd3 && (qdd3.innerHTML = ((parseFloat(json["dd"][3]) || 0) * 100).toFixed(1) + '%');
+            qds0 && (qds0.innerHTML = ((parseFloat(json["Sharpe"][0]) || 0)).toFixed(2));
+            qds3 && (qds3.innerHTML = ((parseFloat(json["Sharpe"][3]) || 0)).toFixed(2));
+        });
+    });
+} ());
+
+
 window.onload = function() {
     var hamburger = document.getElementsByClassName('menu-button')[0];
     var menuLinks = document.getElementsByClassName('page-link');
@@ -232,7 +416,4 @@ window.onload = function() {
         var menuLink = menuLinks[i];
         menuLink.addEventListener('click', toggleMenu);
     }
-
-    tableIndicators();
-    tableExpand();
 };
