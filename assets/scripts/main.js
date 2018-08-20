@@ -285,7 +285,7 @@ var tableIndicators = function () {
 
             var format_perf = function (x) {
                 return (parseFloat(x) * 100.).toFixed(1) + '%'
-            }
+            };
 
             var perfStartYearly = document.getElementById('perf-start-yearly');
             var dataReturnSummary0 = document.getElementById('data-return-summary-0');
@@ -294,10 +294,10 @@ var tableIndicators = function () {
             var dataReturnSummary4 = document.getElementById('data-return-summary-4');
 
             perfStartYearly && (perfStartYearly.innerHTML = ((parseFloat(json['return_summary'][5]) || 0) * 100).toFixed(1) + '%');
-            dataReturnSummary0 && (dataReturnSummary0.innerHTML = format_perf(json['return_summary'][0]);
-            dataReturnSummary2 && (dataReturnSummary2.innerHTML = format_perf(json['return_summary'][2]);
-            dataReturnSummary3 && (dataReturnSummary3.innerHTML = format_perf(json['return_summary'][3]);
-            dataReturnSummary4 && (dataReturnSummary4.innerHTML = format_perf(json['return_summary'][4]);
+            dataReturnSummary0 && (dataReturnSummary0.innerHTML = format_perf(json['return_summary'][0]));
+            dataReturnSummary2 && (dataReturnSummary2.innerHTML = format_perf(json['return_summary'][2]));
+            dataReturnSummary3 && (dataReturnSummary3.innerHTML = format_perf(json['return_summary'][3]));
+            dataReturnSummary4 && (dataReturnSummary4.innerHTML = format_perf(json['return_summary'][4]));
         });
     });
 
