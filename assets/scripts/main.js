@@ -347,14 +347,11 @@ var tableIndicators = function () {
             var crcIndexValueElement = document.getElementById('crc-index-value');
 
             var date = new Date(crcIndexDate);
-            crcIndexDateElement && (crcIndexDateElement.innerText = date.toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit'
-            }) + ', ' + date.toLocaleDateString('en-US', {
+            crcIndexDateElement && (crcIndexDateElement.innerText = '12:00 PM, ' + date.toLocaleDateString('en-US', {
                 month: 'short',
                 year: 'numeric',
                 day: 'numeric'
-            }));
+            }) + ' (GMT)');
 
             crcIndexValueElement && (crcIndexValueElement.innerText = parseFloat(crcIndexValue).toFixed(0));
 
@@ -390,7 +387,8 @@ var tableIndicators = function () {
         response.json().then(function (json) {
             window.jsonData.performanceQuickStats = json;
 
-            var qdnp = document.getElementById('quick-data-net-perf');
+            var qdnp0 = document.getElementById('perf-start-yearly');
+            var qdnp3 = document.getElementById('quick-data-net-perf');
             var qdv0 = document.getElementById('quick-data-vol-0');
             var qdv3 = document.getElementById('quick-data-vol-3');
             var qdd0 = document.getElementById('quick-data-dd-0');
@@ -398,13 +396,17 @@ var tableIndicators = function () {
             var qds0 = document.getElementById('quick-data-sharpe-0');
             var qds3 = document.getElementById('quick-data-sharpe-3');
 
-            qdnp && (qdnp.innerHTML = ((parseFloat(json["net perf/dd"][3]) || 0) * 100).toFixed(1) + '%');
-            qdv0 && (qdv0.innerHTML = ((parseFloat(json["vol"][0]) || 0) * 100).toFixed(1) + '%');
-            qdv3 && (qdv3.innerHTML = ((parseFloat(json["vol"][3]) || 0) * 100).toFixed(1) + '%');
-            qdd0 && (qdd0.innerHTML = ((parseFloat(json["dd"][0]) || 0) * 100).toFixed(1) + '%');
-            qdd3 && (qdd3.innerHTML = ((parseFloat(json["dd"][3]) || 0) * 100).toFixed(1) + '%');
-            qds0 && (qds0.innerHTML = ((parseFloat(json["Sharpe"][0]) || 0)).toFixed(2));
-            qds3 && (qds3.innerHTML = ((parseFloat(json["Sharpe"][3]) || 0)).toFixed(2));
+            var index = "CRC3"
+            var benchmark = "Bitcoin"
+
+            qdnp0 && (qdnp0.innerHTML = ((parseFloat(json["perf"][index]) || 0) * 100).toFixed(1) + '%');
+            qdnp3 && (qdnp3.innerHTML = ((parseFloat(json["perf"][benchmark]) || 0) * 100).toFixed(1) + '%');
+            qdv0 && (qdv0.innerHTML = ((parseFloat(json["vol"][index]) || 0) * 100).toFixed(1) + '%');
+            qdv3 && (qdv3.innerHTML = ((parseFloat(json["vol"][benchmark]) || 0) * 100).toFixed(1) + '%');
+            qdd0 && (qdd0.innerHTML = ((parseFloat(json["dd"][index]) || 0) * 100).toFixed(1) + '%');
+            qdd3 && (qdd3.innerHTML = ((parseFloat(json["dd"][benchmark]) || 0) * 100).toFixed(1) + '%');
+            qds0 && (qds0.innerHTML = ((parseFloat(json["Sharpe"][index]) || 0)).toFixed(2));
+            qds3 && (qds3.innerHTML = ((parseFloat(json["Sharpe"][benchmark]) || 0)).toFixed(2));
         });
     });
 } ());
