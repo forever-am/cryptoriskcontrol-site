@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://cryptoriskcontrol.com//feed.xml" rel="self" type="application/atom+xml" /><link href="http://cryptoriskcontrol.com//" rel="alternate" type="text/html" /><updated>2018-10-31T15:35:09+01:00</updated><id>http://cryptoriskcontrol.com//</id><title type="html">Crypto Risk Control</title><subtitle>Low Drawdown Portfolio Indices for Crypto Investors</subtitle><entry><title type="html">What Risk-Management for Crypto Investors?</title><link href="http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management.html" rel="alternate" type="text/html" title="What Risk-Management for Crypto Investors?" /><published>2018-10-24T00:00:00+02:00</published><updated>2018-10-24T00:00:00+02:00</updated><id>http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management</id><content type="html" xml:base="http://cryptoriskcontrol.com//blog/why-crypto-investors-need-risk-management.html">&lt;p&gt;Investing is a bit rock-climbing this way: a good risk-management 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://cryptoriskcontrol.com//feed.xml" rel="self" type="application/atom+xml" /><link href="http://cryptoriskcontrol.com//" rel="alternate" type="text/html" /><updated>2018-11-01T17:12:49+01:00</updated><id>http://cryptoriskcontrol.com//</id><title type="html">Crypto Risk Control</title><subtitle>Low Drawdown Portfolio Indices for Crypto Investors</subtitle><entry><title type="html">What Risk-Management for Crypto Investors?</title><link href="http://cryptoriskcontrol.com//blog/what-risk-management-for-crypto-investors.html" rel="alternate" type="text/html" title="What Risk-Management for Crypto Investors?" /><published>2018-11-01T00:00:00+01:00</published><updated>2018-11-01T00:00:00+01:00</updated><id>http://cryptoriskcontrol.com//blog/what-risk-management-for-crypto-investors</id><content type="html" xml:base="http://cryptoriskcontrol.com//blog/what-risk-management-for-crypto-investors.html">&lt;p&gt;Investing is a bit rock-climbing this way: a good risk-management 
 plan lets you take risks more confidently, and avoid panicking at the wrong 
 time. This is certainly true in the case of crypto.&lt;/p&gt;
 
@@ -15,9 +15,9 @@ volatility control is a poor risk-management paradigm for crypto: VOLATILITY
 &lt;/ul&gt;
 
 &lt;p&gt;The analysis builds on my 2018 &lt;em&gt;Journal of Risk&lt;/em&gt; &lt;a href=&quot;https://www.risk
-.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot;&gt;paper&lt;/a&gt; and my 
+.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot; target=&quot;_blank&quot;&gt;paper&lt;/a&gt; and my 
 &lt;a href=&quot;https://papers
-.ssrn.com/sol3/papers.cfm?abstract_id=3179215&quot;&gt;white paper&lt;/a&gt; with Alice Wang.&lt;/p&gt;
+.ssrn.com/sol3/papers.cfm?abstract_id=3179215&quot; target=&quot;_blank&quot;&gt;white paper&lt;/a&gt; with Alice Wang.&lt;/p&gt;
 
 &lt;h4 id=&quot;the-riskreward-profile-of-bitcoin&quot;&gt;The Risk/Reward Profile of Bitcoin&lt;/h4&gt;
 
@@ -32,14 +32,14 @@ delivered returns of 260% a year, for a volatility of
   500.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Finance Reminder — the &lt;a href=&quot;https://en.wikipedia
- .org/wiki/Sharpe_ratio&quot;&gt;Sharpe ratio&lt;/a&gt; is the ratio of returns (net of the risk-free rate)
+  &lt;p&gt;Finance Reminder — the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sharpe_ratio&quot; target=&quot;_blank&quot;&gt;Sharpe ratio&lt;/a&gt;
+ is the ratio of returns (net of the risk-free rate)
   to the volatility. It is independent of leverage. It lets us compare the 
   attractiveness of returns controlling for implicit leverage.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;The catch is that Bitcoin can experience very large &lt;a href=&quot;https://www
-.investopedia.com/terms/d/drawdown.asp&quot;&gt;drawdowns&lt;/a&gt;, i.e. very large&lt;br /&gt;
+.investopedia.com/terms/d/drawdown.asp&quot; target=&quot;_blank&quot;&gt;drawdowns&lt;/a&gt;, i.e. very large&lt;br /&gt;
 peak-to-trough losses. Indeed, since 2011 there have been 
 three times where Bitcoin lost at least 70% of its value.
 In each of the last two crashes, in 2011-2012  and 2013-2014,&lt;br /&gt;
@@ -60,13 +60,13 @@ will panic and sell low, only to reenter at the next high.&lt;/p&gt;
  periods. It’s especially important because panicky investors often end up buying high and selling low. I will discuss two possible 
  approaches:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.investopedia.com/terms/v/volatility.asp&quot;&gt;Volatility&lt;/a&gt; 
+  &lt;li&gt;&lt;a href=&quot;https://www.investopedia.com/terms/v/volatility.asp&quot; target=&quot;_blank&quot;&gt;Volatility&lt;/a&gt; 
 Control — the most common risk-management framework, and the engine at work 
-behind asset allocation strategies such as &lt;a href=&quot;https://www.investopedia.com/terms/r/risk-parity.asp&quot;&gt;risk parity&lt;/a&gt; (including 
+behind asset allocation strategies such as &lt;a href=&quot;https://www.investopedia.com/terms/r/risk-parity.asp&quot; target=&quot;_blank&quot;&gt;risk parity&lt;/a&gt; (including 
 Bridgewater’s All Weather fund)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.investopedia.com/terms/d/drawdown.asp&quot;&gt;Drawdown&lt;/a&gt; Control
+  &lt;li&gt;&lt;a href=&quot;https://www.investopedia.com/terms/d/drawdown.asp&quot; target=&quot;_blank&quot;&gt;Drawdown&lt;/a&gt; Control
 — (which I’ve written about &lt;a href=&quot;https://www.risk
-.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot;&gt;here&lt;/a&gt;) directly 
+.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;) directly 
 targets drawdowns rather than volatility.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -150,8 +150,8 @@ minimize traditional drawdowns against the safe asset, as well as drawdowns
 relative to a risky benchmark (here Bitcoin). By using methods from robust
  control, we 
 have shown &lt;a href=&quot;https://www.risk
-.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://papers
-.ssrn.com/sol3/papers.cfm?abstract_id=3179215&quot;&gt;there&lt;/a&gt; that it is possible to achieve attractive 
+.net/journal-of-risk/5416616/mostly-prior-free-asset-allocation&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://papers
+.ssrn.com/sol3/papers.cfm?abstract_id=3179215&quot; target=&quot;_blank&quot;&gt;there&lt;/a&gt; that it is possible to achieve attractive 
 trade-offs between upside capture and downside protection once the target is
  drawdowns rather than volatility.&lt;/p&gt;
 
@@ -159,7 +159,7 @@ trade-offs between upside capture and downside protection once the target is
 drawdown control strategy where the maximum leverage is adjusted so that 
 maximum drawdowns against the safe asset are equal to 50%. Because the strategy cuts
  losses effectively during downturns, the strategy tolerates leverage up 
- to 50% while keeping drawdowns under 50%. The resulting Sharpe ratio is 5.05 and turns 
+ to 150% while keeping drawdowns under 50%. The resulting Sharpe ratio is 5.05 and turns 
  out to be better than under volatility control. More importantly, keeping 
  drawdowns equal to 50%, returns are
   much higher than under volatility control: 470% rather than 130%.&lt;/p&gt;
