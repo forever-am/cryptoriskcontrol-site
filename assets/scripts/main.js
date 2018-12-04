@@ -248,24 +248,24 @@ var tableIndicators = function () {
             var allocationJsonCash0 = document.getElementById('allocation-json-cash-0');
             var allocationJsonCashConclude = document.getElementById('allocation-json-cash-conclude');
 
-            allocationJsonBtc1 && (allocationJsonBtc1.innerHTML = ((parseFloat(json['BTC-USD'][1]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonBtc0 && (allocationJsonBtc0.innerHTML = ((parseFloat(json['BTC-USD'][0]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonBtcConclude && (allocationJsonBtcConclude.innerHTML = (parseFloat(json['BTC-USD'][2]) > 0 ? '+' : '') + ((parseFloat(json['BTC-USD'][2]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonEth1 && (allocationJsonEth1.innerHTML = ((parseFloat(json['ETH-USD+'][1]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonEth0 && (allocationJsonEth0.innerHTML = ((parseFloat(json['ETH-USD+'][0]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonEthConclude && (allocationJsonEthConclude.innerHTML = (parseFloat(json['ETH-USD+'][2]) > 0 ? '+' : '') + ((parseFloat(json['ETH-USD+'][2]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonXrp1 && (allocationJsonXrp1.innerHTML = ((parseFloat(json['XRP-USD+'][1]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonXrp0 && (allocationJsonXrp0.innerHTML = ((parseFloat(json['XRP-USD+'][0]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonXrpConclude && (allocationJsonXrpConclude.innerHTML = (parseFloat(json['XRP-USD+'][2]) > 0 ? '+' : '') + ((parseFloat(json['XRP-USD+'][2]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonCash1 && (allocationJsonCash1.innerHTML = ((parseFloat(json['cash'][1]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonCash0 && (allocationJsonCash0.innerHTML = ((parseFloat(json['cash'][0]) || 0) * 100).toFixed(1) + '%');
-            allocationJsonCashConclude && (allocationJsonCashConclude.innerHTML = (parseFloat(json['cash'][2]) > 0 ? '+' : '') + ((parseFloat(json['cash'][2]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonBtc1 && (allocationJsonBtc1.innerHTML = ((parseFloat(json['BTC-USD']["target"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonBtc0 && (allocationJsonBtc0.innerHTML = ((parseFloat(json['BTC-USD']["current"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonBtcConclude && (allocationJsonBtcConclude.innerHTML = (parseFloat(json['BTC-USD']["change"]) > 0 ? '+' : '') + ((parseFloat(json['BTC-USD']["change"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEth1 && (allocationJsonEth1.innerHTML = ((parseFloat(json['ETH-USD+']["target"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEth0 && (allocationJsonEth0.innerHTML = ((parseFloat(json['ETH-USD+']["current"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonEthConclude && (allocationJsonEthConclude.innerHTML = (parseFloat(json['ETH-USD+']["change"]) > 0 ? '+' : '') + ((parseFloat(json['ETH-USD+']["change"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrp1 && (allocationJsonXrp1.innerHTML = ((parseFloat(json['XRP-USD+']["target"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrp0 && (allocationJsonXrp0.innerHTML = ((parseFloat(json['XRP-USD+']["current"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonXrpConclude && (allocationJsonXrpConclude.innerHTML = (parseFloat(json['XRP-USD+']["change"]) > 0 ? '+' : '') + ((parseFloat(json['XRP-USD+']["change"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCash1 && (allocationJsonCash1.innerHTML = ((parseFloat(json['cash']["target"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCash0 && (allocationJsonCash0.innerHTML = ((parseFloat(json['cash']["current"]) || 0) * 100).toFixed(1) + '%');
+            allocationJsonCashConclude && (allocationJsonCashConclude.innerHTML = (parseFloat(json['cash']["change"]) > 0 ? '+' : '') + ((parseFloat(json['cash']["change"]) || 0) * 100).toFixed(1) + '%');
 
             new Allocation('allocation-chart', [
-                { name: 'BTC', y: parseFloat(json['BTC-USD'][1]), color: '#23a899' },
-                { name: 'ETH', y: parseFloat(json['ETH-USD+'][1]), color: '#243a73' },
-                { name: 'XRP', y: parseFloat(json['XRP-USD+'][1]), color: '#3e3e3e' },
-                { name: 'USD', y: parseFloat(json['cash'][1]), color: '#e6e7e9' },
+                { name: 'BTC', y: parseFloat(json['BTC-USD']["target"]), color: '#23a899' },
+                { name: 'ETH', y: parseFloat(json['ETH-USD+']["target"]), color: '#243a73' },
+                { name: 'XRP', y: parseFloat(json['XRP-USD+']["target"]), color: '#3e3e3e' },
+                { name: 'USD', y: parseFloat(json['cash']["target"]), color: '#e6e7e9' },
             ].sort(function (a, b) {
                 return a.y < b.y;
             }).map(function (item, index) {
@@ -304,7 +304,6 @@ var tableIndicators = function () {
     fetch('../assets/data/CRC3_monthly_ret.json').then(function (response) {
 		
         response.json().then(function (json) {
-            console.log(json);
             window.jsonData.monthlyReturn = json;
             var tableBody = document.getElementById('monthly-return-table-body');
 
