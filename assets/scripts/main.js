@@ -293,16 +293,18 @@ var tableIndicators = function () {
             var dataReturnSummary3 = document.getElementById('data-return-summary-3');
             var dataReturnSummary4 = document.getElementById('data-return-summary-4');
 
-            perfStartYearly && (perfStartYearly.innerHTML = ((parseFloat(json['return_summary'][5]) || 0) * 100).toFixed(1) + '%');
-            dataReturnSummary0 && (dataReturnSummary0.innerHTML = format_perf(json['return_summary'][0]));
-            dataReturnSummary2 && (dataReturnSummary2.innerHTML = format_perf(json['return_summary'][1]));
-            dataReturnSummary3 && (dataReturnSummary3.innerHTML = format_perf(json['return_summary'][3]));
-            dataReturnSummary4 && (dataReturnSummary4.innerHTML = format_perf(json['return_summary'][4]));
+            perfStartYearly && (perfStartYearly.innerHTML = ((parseFloat(json['Start (yearly)']) || 0) * 100).toFixed(1) + '%');
+            dataReturnSummary0 && (dataReturnSummary0.innerHTML = format_perf(json['D']));
+            dataReturnSummary2 && (dataReturnSummary2.innerHTML = format_perf(json['MTD']));
+            dataReturnSummary3 && (dataReturnSummary3.innerHTML = format_perf(json['YTD']));
+            dataReturnSummary4 && (dataReturnSummary4.innerHTML = format_perf(json['Y']));
         });
     });
-
+    
     fetch('../assets/data/CRC3_monthly_ret.json').then(function (response) {
+		
         response.json().then(function (json) {
+            console.log(json);
             window.jsonData.monthlyReturn = json;
             var tableBody = document.getElementById('monthly-return-table-body');
 
@@ -310,11 +312,11 @@ var tableIndicators = function () {
                 return;
             }
 
-            Object.keys(json.year).sort(function (a, b) {
+            Object.keys(json["Jan"]).sort(function (a, b) {
                 return parseInt(b) - parseInt(a);
             }).forEach(function (key, index) {
                 var row = document.createElement('tr');
-                row.innerHTML = '<td>' + json.year[key] + '<div class="indicator">' + json.year[key] + '</div></td>';
+                row.innerHTML = '<td>' + key + '<div class="indicator">' + key + '</div></td>';
 
                 (index > 3) && row.classList.add('to-show');
 
